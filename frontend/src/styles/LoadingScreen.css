@@ -1,0 +1,135 @@
+/* DailyMitra Premium Loading / Splash Screen Styles */
+
+:root {
+  --dm-cream-bg: #FAF7F2;
+  --dm-cream-card: #FFFFFF;
+  --dm-forest-dark: #053B27;
+  --dm-forest-primary: #064E3B;
+  --dm-emerald: #10B981;
+  --dm-lime: #84CC16;
+  --dm-yellow: #FACC15;
+  --dm-muted-green: #376554;
+  --dm-track-bg: #E4ECE3;
+  --dm-shadow-soft: 0 20px 40px -15px rgba(5, 59, 39, 0.08);
+}
+
+/* Background Subtle Gradient Blobs */
+@keyframes dm-blob-float-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(30px, -25px) scale(1.1);
+    opacity: 0.75;
+  }
+}
+
+@keyframes dm-blob-float-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-35px, 20px) scale(1.15);
+    opacity: 0.65;
+  }
+}
+
+/* Logo Floating / Breathing */
+@keyframes dm-logo-breathing {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+/* Dynamic Leaf Floating Animations */
+@keyframes dm-leaf-float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) rotate(8deg) scale(1.05);
+  }
+}
+
+@keyframes dm-leaf-float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(8px) rotate(-10deg) scale(0.95);
+  }
+}
+
+/* Particle Pulse */
+@keyframes dm-particle-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.2);
+  }
+}
+
+/* Shimmer Light Sweep on Progress Bar */
+@keyframes dm-progress-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+/* Utility classes for Loading Screen */
+.dm-loading-bg {
+  background-color: var(--dm-cream-bg);
+}
+
+.dm-blob-1 {
+  animation: dm-blob-float-1 12s ease-in-out infinite;
+}
+
+.dm-blob-2 {
+  animation: dm-blob-float-2 14s ease-in-out infinite;
+}
+
+.dm-logo-float {
+  animation: dm-logo-breathing 3.6s ease-in-out infinite;
+}
+
+.dm-leaf-1 {
+  animation: dm-leaf-float-slow 4.2s ease-in-out infinite;
+}
+
+.dm-leaf-2 {
+  animation: dm-leaf-float-reverse 4.8s ease-in-out infinite 0.5s;
+}
+
+.dm-particle {
+  animation: dm-particle-pulse 2.8s ease-in-out infinite;
+}
+
+.dm-shimmer-sweep {
+  animation: dm-progress-shimmer 2s ease-in-out infinite;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .dm-blob-1,
+  .dm-blob-2,
+  .dm-logo-float,
+  .dm-leaf-1,
+  .dm-leaf-2,
+  .dm-particle,
+  .dm-shimmer-sweep {
+    animation: none !important;
+    transform: none !important;
+  }
+}
